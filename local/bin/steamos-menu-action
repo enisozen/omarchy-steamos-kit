@@ -1,0 +1,72 @@
+#!/bin/bash
+# Handles SteamOS menu actions reliably in Omarchy
+
+action="${1:-desktop}"
+
+# Helper to switch to workspace 1 (SteamOS desktop)
+switch_to_ws1() {
+  hyprctl dispatch 'hl.dsp.focus({ workspace = "1" })' >/dev/null 2>&1 || hyprctl eval 'o.workspaces.focus(1)()' >/dev/null 2>&1
+}
+
+# Helper to focus a window by class/title regex
+focus_window() {
+  local pattern="$1"
+  local addr
+  addr=$(hyprctl clients -j 2>/dev/null | jq -r --arg p "$pattern" '.[] | select((.class | test($p; "i")) or (.title | test($p; "i"))) | .address' | head -n 1)
+  if [[ -n "$addr" && "$addr" != "null" ]]; then
+    hyprctl dispatch "hl.dsp.focus({ window = \"address:$addr\" })" >/dev/null 2>&1
+    return 0
+  fi
+  return 1
+}
+
+case "$action" in
+  desktop)
+    switch_to_ws1
+    # If a window on ws1 is fullscreen, unfullscreen so desktop is visible
+    hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "fullscreen", action = "unset" })' >/dev/null 2>&1 || true
+    ;;
+  steam|normal)
+    switch_to_ws1
+    if ! focus_window "^steam$"; then
+      setsid steam steam://open/main >/dev/null 2>&1 &
+    fi
+    ;;
+  bigpicture)
+    switch_to_ws1
+    if pgrep -x steam >/dev/null 2>&1; then
+      setsid steam steam://open/bigpicture >/dev/null 2>&1 &
+    else
+      setsid steam -gamepadui >/dev/null 2>&1 &
+    fi
+    sleep 0.8
+    focus_window "Steam Big Picture" || focus_window "Geniş Ekran" || focus_window "^steam$" || true
+    ;;
+  library)
+    switch_to_ws1
+    setsid steam steam://nav/games/collection >/dev/null 2>&1 &
+    sleep 0.5
+    focus_window "^steam$" || true
+    ;;
+  store)
+    switch_to_ws1
+    setsid steam steam://store >/dev/null 2>&1 &
+    sleep 0.5
+    focus_window "^steam$" || true
+    ;;
+  friends)
+    switch_to_ws1
+    setsid steam steam://open/friends >/dev/null 2>&1 &
+    sleep 0.5
+    focus_window "Arkadaş" || focus_window "Friends" || focus_window "^steam$" || true
+    ;;
+  settings)
+    switch_to_ws1
+    setsid steam steam://settings >/dev/null 2>&1 &
+    sleep 0.5
+    focus_window "Ayarlar" || focus_window "Settings" || focus_window "^steam$" || true
+    ;;
+  *)
+    switch_to_ws1
+    ;;
+esac

@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 2160" width="3840" height="2160">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05080e" />
+      <stop offset="35%" stop-color="#090f18" />
+      <stop offset="70%" stop-color="#0e1726" />
+      <stop offset="100%" stop-color="#070c14" />
+    </linearGradient>
+
+    <radialGradient id="cyanNebula" cx="65%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#1a9fff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="purpleNebula" cx="30%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#7928ca" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="topOrb" cx="50%" cy="0%" r="50%">
+      <stop offset="0%" stop-color="#1a9fff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#1a9fff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0.0" />
+    </linearGradient>
+
+    <linearGradient id="wave2" x1="100%" y1="100%" x2="0%" y2="20%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.0" />
+    </linearGradient>
+
+    <linearGradient id="steamGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#66c0f4" />
+      <stop offset="100%" stop-color="#1a9fff" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="megaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <pattern id="grid" width="120" height="120" patternUnits="userSpaceOnUse">
+      <path d="M 120 0 L 0 0 0 120" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.3" />
+      <circle cx="120" cy="0" r="1.5" fill="#38bdf8" fill-opacity="0.35" />
+    </pattern>
+
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#38bdf8" fill-opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="3840" height="2160" fill="url(#bgGrad)" />
+
+  <!-- Subtle Geometric Grid / Cyber Matrix -->
+  <rect width="3840" height="2160" fill="url(#grid)" />
+  <rect width="3840" height="2160" fill="url(#dots)" opacity="0.8" />
+
+  <!-- Atmospheric Nebulae -->
+  <rect width="3840" height="2160" fill="url(#cyanNebula)" />
+  <rect width="3840" height="2160" fill="url(#purpleNebula)" />
+  <rect width="3840" height="2160" fill="url(#topOrb)" />
+
+  <!-- Left Side Vignette: Darkening for Settings Widget Readability -->
+  <rect x="0" y="0" width="1400" height="2160" fill="black" opacity="0.35" />
+
+  <!-- Flowing Steam Ribbon Curves (SteamOS 3.x Holo style) -->
+  <path d="M -100 1600 C 600 1300, 1200 1900, 2000 1450 C 2600 1100, 3100 1600, 3940 1000 L 3940 2260 L -100 2260 Z"
+        fill="url(#wave1)" />
+  <path d="M -100 1850 C 700 1450, 1400 2100, 2200 1600 C 2900 1200, 3300 1750, 3940 1300 L 3940 2260 L -100 2260 Z"
+        fill="url(#wave2)" />
+
+  <path d="M 200 -100 C 800 500, 1700 100, 2400 700 C 2900 1150, 3400 800, 4000 1200"
+        fill="none" stroke="#00d2ff" stroke-width="2.5" stroke-opacity="0.3" filter="url(#softGlow)" />
+  <path d="M 100 100 C 900 650, 1800 250, 2500 850 C 3000 1300, 3500 950, 4100 1350"
+        fill="none" stroke="#a855f7" stroke-width="1.8" stroke-opacity="0.25" />
+
+  <!-- Giant Ambient Steam Deck Orbital Geometry in Center-Right -->
+  <g transform="translate(2250, 1080)">
+    <!-- Outer Precision Ticks Ring -->
+    <circle r="680" fill="none" stroke="#1a9fff" stroke-width="2" stroke-opacity="0.12" stroke-dasharray="8 24" />
+    <circle r="600" fill="none" stroke="#00d2ff" stroke-width="1.5" stroke-opacity="0.18" />
+    <circle r="520" fill="none" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="40 12" />
+
+    <!-- Radiant Accent Arcs -->
+    <path d="M -480 0 A 480 480 0 0 1 0 -480" fill="none" stroke="#00d2ff" stroke-width="4" stroke-opacity="0.4" stroke-linecap="round" filter="url(#softGlow)" />
+    <path d="M 480 0 A 480 480 0 0 1 0 480" fill="none" stroke="#a855f7" stroke-width="3" stroke-opacity="0.4" stroke-linecap="round" filter="url(#softGlow)" />
+
+    <!-- Steam Deck Console Silhouette Watermark -->
+    <rect x="-380" y="-190" width="760" height="380" rx="190" fill="#0c1420" fill-opacity="0.45" stroke="#1a9fff" stroke-width="2.5" stroke-opacity="0.3" />
+    <circle cx="-250" cy="0" r="110" fill="none" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.25" />
+    <circle cx="250" cy="0" r="110" fill="none" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.25" />
+    <rect x="-140" y="-110" width="280" height="220" rx="16" fill="#070c14" fill-opacity="0.75" stroke="#1a9fff" stroke-width="2" stroke-opacity="0.45" />
+
+    <!-- Center Glowing Steam Icon -->
+    <g transform="scale(1.2)" filter="url(#megaGlow)">
+      <!-- Large Crank Circle -->
+      <circle cx="-18" cy="22" r="48" fill="none" stroke="url(#steamGlow)" stroke-width="12" />
+      <circle cx="-18" cy="22" r="22" fill="url(#steamGlow)" />
+      <!-- Arm Linkage -->
+      <path d="M -10 14 L 32 -26" stroke="url(#steamGlow)" stroke-width="14" stroke-linecap="round" />
+      <!-- Small Pin Circle -->
+      <circle cx="36" cy="-30" r="24" fill="none" stroke="url(#steamGlow)" stroke-width="9" />
+      <circle cx="36" cy="-30" r="10" fill="url(#steamGlow)" />
+    </g>
+
+    <!-- Cyberpunk Ring Crosshairs & Labels -->
+    <line x1="-720" y1="0" x2="-640" y2="0" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.5" />
+    <line x1="640" y1="0" x2="720" y2="0" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.5" />
+    <line x1="0" y1="-720" x2="0" y2="-640" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.5" />
+    <line x1="0" y1="640" x2="0" y2="720" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.5" />
+
+    <text x="0" y="270" text-anchor="middle" fill="#66c0f4" font-family="'JetBrains Mono', 'DejaVu Sans', sans-serif" font-size="28" font-weight="800" letter-spacing="14" opacity="0.85">STEAMOS 3.6 HOLO</text>
+    <text x="0" y="310" text-anchor="middle" fill="#94a3b8" font-family="'JetBrains Mono', 'DejaVu Sans', sans-serif" font-size="14" font-weight="600" letter-spacing="6" opacity="0.65">CUSTOM DESKTOP ENVIRONMENT</text>
+  </g>
+
+  <!-- Tech Badges & Coordinate Accents (Subtle, Non-intrusive) -->
+  <g transform="translate(180, 2040)" opacity="0.5">
+    <text x="0" y="0" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="3">DECK-UI // ARCH-64 // VIRTUAL-1 DISPLAY</text>
+    <text x="0" y="24" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="2">SYSTEM STATUS: OPTIMIZED • HYPRLAND WAYLAND COMPOSITOR</text>
+  </g>
+
+  <!-- Right Side Accent Lines -->
+  <g transform="translate(3640, 2040)" opacity="0.4" text-anchor="end">
+    <text x="0" y="0" fill="#a855f7" font-family="'JetBrains Mono', monospace" font-size="15" letter-spacing="4">VALVE PROTOCOL 3.6</text>
+    <text x="0" y="24" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="2">OMARCHY LINUX WORKSPACE 01</text>
+  </g>
+</svg>

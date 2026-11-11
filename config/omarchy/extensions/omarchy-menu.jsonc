@@ -1,0 +1,50 @@
+{
+  // Extend the Quickshell Omarchy menu with JSONC.
+  "steamos": {
+    "icon": "󰓓",
+    "label": "SteamOS",
+    "description": "SteamOS Konsol ve Oyun Merkezi"
+  },
+  "steamos.desktop": {
+    "icon": "󰍹",
+    "label": "SteamOS Masaüstü Ortamı",
+    "description": "Steam Deck masaüstü alanına geçiş yap (Çalışma Alanı 1)",
+    "action": "steamos-menu-action desktop"
+  },
+  "steamos.normal": {
+    "icon": "󰓓",
+    "label": "Steam (Masaüstü / Normal Mod)",
+    "description": "Klasik Steam istemci penceresini aç",
+    "action": "steamos-menu-action normal"
+  },
+  "steamos.bigpicture": {
+    "icon": "󰊗",
+    "label": "Steam Big Picture (GamepadUI)",
+    "description": "Steam Deck konsol / geniş ekran arayüzünü başlat",
+    "action": "steamos-menu-action bigpicture"
+  },
+  "steamos.library": {
+    "icon": "󰺵",
+    "label": "Oyun Kütüphanesi",
+    "description": "Steam kütüphanesini ve oyun koleksiyonunu aç",
+    "action": "steamos-menu-action library"
+  },
+  "steamos.store": {
+    "icon": "󰄗",
+    "label": "Steam Mağazası",
+    "description": "Steam mağazasını ve indirimleri görüntüle",
+    "action": "steamos-menu-action store"
+  },
+  "steamos.friends": {
+    "icon": "󰒍",
+    "label": "Arkadaşlar & Sohbet",
+    "description": "Çevrimiçi arkadaş listesini ve sohbet penceresini aç",
+    "action": "steamos-menu-action friends"
+  },
+  "steamos.settings": {
+    "icon": "󰒓",
+    "label": "Steam İstemci Ayarları",
+    "description": "Proton, kontrolcü ve istemci yapılandırması",
+    "action": "steamos-menu-action settings"
+  }
+}

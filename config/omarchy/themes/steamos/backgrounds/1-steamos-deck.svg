@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b10"/>
+      <stop offset="50%" stop-color="#0e141b"/>
+      <stop offset="100%" stop-color="#142030"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="70%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1a9fff" stop-opacity="0.38"/>
+      <stop offset="50%" stop-color="#66c0f4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0e141b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="25%" cy="65%" r="45%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#0e141b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="deckring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a9fff"/>
+      <stop offset="55%" stop-color="#66c0f4"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow1)"/>
+  <rect width="1920" height="1080" fill="url(#glow2)"/>
+  <g stroke="#1b2838" stroke-width="1" opacity="0.45">
+    <line x1="0" y1="180" x2="1920" y2="180"/>
+    <line x1="0" y1="360" x2="1920" y2="360"/>
+    <line x1="0" y1="540" x2="1920" y2="540"/>
+    <line x1="0" y1="720" x2="1920" y2="720"/>
+    <line x1="0" y1="900" x2="1920" y2="900"/>
+    <line x1="320" y1="0" x2="320" y2="1080"/>
+    <line x1="640" y1="0" x2="640" y2="1080"/>
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="1280" y1="0" x2="1280" y2="1080"/>
+    <line x1="1600" y1="0" x2="1600" y2="1080"/>
+  </g>
+  <g transform="translate(960, 500)">
+    <circle cx="0" cy="0" r="250" fill="none" stroke="url(#deckring)" stroke-width="26" opacity="0.15"/>
+    <path d="M 0 -190 A 190 190 0 1 1 0 190" fill="none" stroke="url(#deckring)" stroke-width="44" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="95" fill="#dce8f5"/>
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#1a9fff" stroke-width="4" opacity="0.5"/>
+  </g>
+  <text x="960" y="810" font-family="sans-serif" font-size="46" font-weight="800" fill="#dce8f5" letter-spacing="14" text-anchor="middle">STEAMOS</text>
+  <text x="960" y="852" font-family="sans-serif" font-size="18" font-weight="600" fill="#66c0f4" letter-spacing="8" text-anchor="middle">VALVE STEAM DECK • OMARCHY EDITION</text>
+</svg>

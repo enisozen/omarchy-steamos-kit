@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 2160" width="3840" height="2160">
+  <defs>
+    <!-- Background Space Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04070d" />
+      <stop offset="35%" stop-color="#070c14" />
+      <stop offset="70%" stop-color="#0b1320" />
+      <stop offset="100%" stop-color="#05080e" />
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="48%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.14" />
+      <stop offset="40%" stop-color="#1a9fff" stop-opacity="0.06" />
+      <stop offset="80%" stop-color="#7928ca" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="rightVignette" cx="100%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#03060a" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="steamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#7dd3fc" />
+      <stop offset="65%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <linearGradient id="deckBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0.4" />
+    </linearGradient>
+
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="45" result="blur1" />
+      <feGaussianBlur stdDeviation="18" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Tech Grid -->
+    <pattern id="grid" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M 140 0 L 0 0 0 140" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.25" />
+      <circle cx="140" cy="0" r="1.5" fill="#38bdf8" fill-opacity="0.3" />
+    </pattern>
+
+    <linearGradient id="waveCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.22" />
+      <stop offset="50%" stop-color="#1a9fff" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Cosmic Canvas -->
+  <rect width="3840" height="2160" fill="url(#bgGrad)" />
+  <rect width="3840" height="2160" fill="url(#grid)" />
+  <rect width="3840" height="2160" fill="url(#centerGlow)" />
+
+  <!-- Flowing Bottom Cyber Waves -->
+  <path d="M -100 1700 C 600 1400, 1300 2000, 2100 1600 C 2700 1300, 3200 1700, 3940 1200 L 3940 2200 L -100 2200 Z"
+        fill="url(#waveCyan)" />
+
+  <!-- Shadow vignette on the right to keep the widget readable -->
+  <rect width="3840" height="2160" fill="url(#rightVignette)" />
+
+  <!-- ==================== CENTER: OFFICIAL VALVE STEAM EMBLEM ==================== -->
+  <g transform="translate(1820, 1080)">
+    <!-- Outer Orbital Deck Rings -->
+    <circle r="560" fill="none" stroke="#1a9fff" stroke-width="2" stroke-opacity="0.15" stroke-dasharray="8 20" />
+    <circle r="480" fill="none" stroke="#00d2ff" stroke-width="1.5" stroke-opacity="0.22" />
+    <circle r="400" fill="none" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="32 10" />
+
+    <!-- Accent Arc Glows -->
+    <path d="M -480 0 A 480 480 0 0 1 0 -480" fill="none" stroke="#00e5ff" stroke-width="4.5" stroke-opacity="0.45" stroke-linecap="round" filter="url(#softGlow)" />
+    <path d="M 480 0 A 480 480 0 0 1 0 480" fill="none" stroke="#a855f7" stroke-width="3.5" stroke-opacity="0.4" stroke-linecap="round" filter="url(#softGlow)" />
+
+    <!-- Dark Center Glass Backdrop for High Contrast -->
+    <circle r="260" fill="#080e18" fill-opacity="0.82" stroke="#1e3a5f" stroke-width="2" />
+
+    <!-- THE OFFICIAL VALVE STEAM LOGO (Scale 1.7x, centered) -->
+    <g transform="translate(-217, -220) scale(1.7)" filter="url(#neonGlow)">
+      <path d="M127.779 0C60.42 0 5.24 52.412 0 119.014l68.724 28.674a35.812 35.812 0 0 1 20.426-6.366c.682 0 1.356.019 2.02.056l30.566-44.71v-.626c0-26.903 21.69-48.796 48.353-48.796 26.662 0 48.352 21.893 48.352 48.796 0 26.902-21.69 48.804-48.352 48.804-.37 0-.73-.009-1.098-.018l-43.593 31.377c.028.582.046 1.163.046 1.735 0 20.204-16.283 36.636-36.294 36.636-17.566 0-32.263-12.658-35.584-29.412L4.41 164.654c15.223 54.313 64.673 94.132 123.369 94.132 70.818 0 128.221-57.938 128.221-129.393C256 57.93 198.597 0 127.779 0ZM80.352 196.332l-15.749-6.568c2.787 5.867 7.621 10.775 14.033 13.47 13.857 5.83 29.836-.803 35.612-14.799a27.555 27.555 0 0 0 .046-21.035c-2.768-6.79-7.999-12.086-14.706-14.909-6.67-2.795-13.811-2.694-20.085-.304l16.275 6.79c10.222 4.3 15.056 16.145 10.794 26.46-4.253 10.314-15.998 15.195-26.22 10.895Zm121.957-100.29c0-17.925-14.457-32.52-32.217-32.52-17.769 0-32.226 14.595-32.226 32.52 0 17.926 14.457 32.512 32.226 32.512 17.76 0 32.217-14.586 32.217-32.512Zm-56.37-.055c0-13.488 10.84-24.42 24.2-24.42 13.368 0 24.208 10.932 24.208 24.42 0 13.488-10.84 24.421-24.209 24.421-13.359 0-24.2-10.933-24.2-24.42Z" fill="url(#steamGradient)" />
+    </g>
+
+    <!-- Sleek SteamOS Holo Typography -->
+    <text x="0" y="340" text-anchor="middle" fill="#ffffff" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="34" font-weight="800" letter-spacing="16" opacity="0.95">S T E A M O S</text>
+    <text x="0" y="385" text-anchor="middle" fill="#38bdf8" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="14" font-weight="700" letter-spacing="8" opacity="0.75">VALVE STEAM DECK // 3.6 HOLO</text>
+  </g>
+
+  <!-- Technical Corner Metadata (Left Bottom) -->
+  <g transform="translate(180, 2060)" opacity="0.4">
+    <text x="0" y="0" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="14" letter-spacing="3">WORKSPACE 01 // STEAMOS DECK ENVIRONMENT</text>
+  </g>
+</svg>

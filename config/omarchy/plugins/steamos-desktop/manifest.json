@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "steamos.desktop",
+  "name": "SteamOS Desktop Layer",
+  "version": "1.0.0",
+  "author": "Omarchy",
+  "description": "Desktop icons and widget layer for SteamOS workspace",
+  "kinds": [
+    "service"
+  ],
+  "entryPoints": {
+    "service": "Service.qml"
+  }
+}
