@@ -13,17 +13,11 @@ It brings a dedicated Steam Deck desktop mode to **Workspace 1**—featuring int
 ### 1. SteamOS Desktop Mode (Workspace 1)
 ![SteamOS Desktop](screenshots/steamos-desktop.png)
 
-### 2. Glassmorphic Performance & Client Widgets
-![SteamOS Widgets](screenshots/steamos-widgets.png)
+### 2. Dedicated SteamOS Wallpaper
+![SteamOS Wallpaper](screenshots/steamos-wallpaper.png)
 
-### 3. Fullscreen Steam Big Picture Mode (GamepadUI)
-![Steam Big Picture Mode](screenshots/steamos-bigpicture.png)
-
-### 4. Floating Desktop Apps & Friends List
-![Floating Steam & Friends](screenshots/steamos-apps.png)
-
-### 5. Super + Space SteamOS Menu
-![Super+Space SteamOS Menu](screenshots/steamos-menu.png)
+### 3. Plymouth Boot & Unlock Screen
+![SteamOS Unlock Screen](screenshots/steamos-unlock.png)
 
 ---
 

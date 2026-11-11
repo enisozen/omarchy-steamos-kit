@@ -13,17 +13,11 @@ Bu proje, **Çalışma Alanı 1**'i (Workspace 1) özel bir Steam Deck masaüst�
 ### 1. SteamOS Masaüstü Ortamı (Çalışma Alanı 1)
 ![SteamOS Masaüstü](screenshots/steamos-desktop.png)
 
-### 2. Performans ve İstemci Widget'ları (Sağ Taraf)
-![SteamOS Widgetlar](screenshots/steamos-widgets.png)
+### 2. SteamOS Özel Duvar Kağıdı
+![SteamOS Duvar Kağıdı](screenshots/steamos-wallpaper.png)
 
-### 3. Tam Ekran Steam Geniş Ekran Modu (Big Picture / GamepadUI)
-![Steam Big Picture Modu](screenshots/steamos-bigpicture.png)
-
-### 4. Kayan Pencereler & Arkadaş Listesi
-![Masaüstü Pencereleri](screenshots/steamos-apps.png)
-
-### 5. Süper + Boşluk Menüsü (SteamOS Bölümü)
-![Süper + Boşluk SteamOS Menüsü](screenshots/steamos-menu.png)
+### 3. Başlangıç / Disk Kilidi Açma (Plymouth) Ekranı
+![SteamOS Kilidi Aç Ekranı](screenshots/steamos-unlock.png)
 
 ---
 
