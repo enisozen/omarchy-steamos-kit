@@ -52,6 +52,7 @@ Positioned seamlessly on the right side of Workspace 1:
 * **Desktop Icons:** Ev (Home), Çöp Kutusu (Trash), Google Chrome, Steam Normal Mod, and Steam Geniş Mod (BPM).
 * **Smart Window Focus:** Re-launching shortcuts intelligently focuses the active Steam window instead of creating duplicate or hung processes.
 * **Automatic Fullscreen:** Big Picture / GamepadUI windows automatically go borderless fullscreen on Workspace 1.
+* **System Boot Autostart:** Seamlessly launches Steam directly into Big Picture (GamepadUI) mode on Workspace 1 on boot after the desktop environment loads.
 
 ### 🚀 4. Integrated Super + Space Launcher Menu
 Integrated into Omarchy's menu system (`~/.config/omarchy/extensions/omarchy-menu.jsonc`):

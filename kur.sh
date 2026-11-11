@@ -40,7 +40,21 @@ echo "⚙️  SteamOS eylem yöneticisi kuruluyor..."
 cp "$KIT_DIR/local/bin/steamos-menu-action" "$LOCAL_BIN/steamos-menu-action"
 chmod +x "$LOCAL_BIN/steamos-menu-action"
 
-# 7. Omarchy Menü ve Eklentileri Yenile
+# 7. Hyprland yapılandırması kontrolü & otomatik başlatma
+echo "🪄 Hyprland yapılandırması kontrol ediliyor..."
+if [[ -f "$CONFIG_DIR/hypr/autostart.lua" ]]; then
+  if grep -q "setsid /usr/bin/steam >/dev/null" "$CONFIG_DIR/hypr/autostart.lua"; then
+    echo "⚡ autostart.lua dosyasındaki Steam otomatik başlatması Geniş Ekran (GamepadUI) moduna güncelleniyor..."
+    sed -i 's|setsid /usr/bin/steam >/dev/null.*|if pgrep -x steam >/dev/null 2>\&1; then setsid /usr/bin/steam steam://open/bigpicture >/dev/null 2>\&1 \& else setsid /usr/bin/steam -gamepadui >/dev/null 2>\&1 \& fi'\''")|g' "$CONFIG_DIR/hypr/autostart.lua"
+  fi
+fi
+if [[ -f "$CONFIG_DIR/hypr/bindings.lua" ]]; then
+  if ! grep -q "steamos-menu-action" "$CONFIG_DIR/hypr/bindings.lua"; then
+    echo "💡 Not: ~/.config/hypr/bindings.lua dosyanızda SteamOS kısayollarının bulunduğundan emin olun."
+  fi
+fi
+
+# 8. Omarchy Menü ve Eklentileri Yenile
 if command -v omarchy >/dev/null 2>&1; then
   echo "🔄 Omarchy kabuğu ve menüler güncelleniyor..."
   omarchy menu refresh >/dev/null 2>&1 || true

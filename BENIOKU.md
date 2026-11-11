@@ -52,6 +52,7 @@ Masaüstünün sağına dengeli ve şık bir şekilde yerleştirilmiştir:
 * **Sol Masaüstü Simgeleri:** Ev Klasörü, Çöp Kutusu, Google Chrome, Steam Normal Mod ve Steam Geniş Mod (BPM).
 * **Akıllı Odaklama:** Kısayollara tekrar tıklandığında açık pencere varsa doğrudan ona odaklanır.
 * **Otomatik Tam Ekran:** Big Picture açıldığında Çalışma Alanı 1'de otomatik olarak çerçevesiz tam ekrana geçer.
+* **Sistem Açılışında Otomatik Başlatma:** Sistem yeniden başladığında masaüstü hazır olur olmaz Steam'i doğrudan Geniş Ekran (GamepadUI / Big Picture) modunda Çalışma Alanı 1 üzerinde başlatır.
 
 ### 🚀 4. Süper + Boşluk SteamOS Menüsü
 Omarchy menü sistemine tam entegredir:

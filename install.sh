@@ -40,8 +40,14 @@ echo "⚙️  Installing steamos-menu-action helper..."
 cp "$KIT_DIR/local/bin/steamos-menu-action" "$LOCAL_BIN/steamos-menu-action"
 chmod +x "$LOCAL_BIN/steamos-menu-action"
 
-# 7. Hyprland configuration recommendations
+# 7. Hyprland configuration recommendations & autostart
 echo "🪄 Checking Hyprland configuration..."
+if [[ -f "$CONFIG_DIR/hypr/autostart.lua" ]]; then
+  if grep -q "setsid /usr/bin/steam >/dev/null" "$CONFIG_DIR/hypr/autostart.lua"; then
+    echo "⚡ Updating Steam autostart to Big Picture (GamepadUI) in autostart.lua..."
+    sed -i 's|setsid /usr/bin/steam >/dev/null.*|if pgrep -x steam >/dev/null 2>\&1; then setsid /usr/bin/steam steam://open/bigpicture >/dev/null 2>\&1 \& else setsid /usr/bin/steam -gamepadui >/dev/null 2>\&1 \& fi'\''")|g' "$CONFIG_DIR/hypr/autostart.lua"
+  fi
+fi
 if [[ -f "$CONFIG_DIR/hypr/bindings.lua" ]]; then
   if ! grep -q "steamos-menu-action" "$CONFIG_DIR/hypr/bindings.lua"; then
     echo "💡 Note: Ensure your ~/.config/hypr/bindings.lua includes SteamOS shortcuts."
