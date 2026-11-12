@@ -73,9 +73,11 @@ for i = 1, 9 do
   o.rebind("SUPER + SHIFT + ALT + " .. key, "Pencereyi sessizce Masaüstü " .. i .. "'e taşı", o.workspaces.move_window(target_ws, false))
 end
 
--- Switch to SteamOS via SUPER+0 or SUPER+code:49 (key left of 1).
+-- Switch to SteamOS via SUPER+é / code:49 (key left of 1) or SUPER+0.
 o.rebind("SUPER + code:19", "SteamOS'a geç", o.workspaces.focus(1))
-o.bind("SUPER + code:49", "SteamOS'a geç", o.workspaces.focus(1))
+o.bind("SUPER + code:49", "SteamOS'a geç (é / \" tuşu)", o.workspaces.focus(1))
+o.bind("SUPER + eacute", "SteamOS'a geç (é tuşu)", o.workspaces.focus(1))
+o.bind("SUPER + quotedbl", "SteamOS'a geç (\" tuşu)", o.workspaces.focus(1))
 
 -- Prevent moving applications to SteamOS via keybindings.
 local function block_move_to_steamos()
@@ -85,6 +87,8 @@ o.rebind("SUPER + SHIFT + code:19", "SteamOS koruması", block_move_to_steamos)
 o.rebind("SUPER + SHIFT + ALT + code:19", "SteamOS koruması", block_move_to_steamos)
 o.bind("SUPER + SHIFT + code:49", "SteamOS koruması", block_move_to_steamos)
 o.bind("SUPER + SHIFT + ALT + code:49", "SteamOS koruması", block_move_to_steamos)
+o.bind("SUPER + SHIFT + eacute", "SteamOS koruması", block_move_to_steamos)
+o.bind("SUPER + SHIFT + quotedbl", "SteamOS koruması", block_move_to_steamos)
 
 -- Dictation keys from before Alt + Space and Right Alt became the defaults.
 -- Remove these lines to give the keys back to applications.

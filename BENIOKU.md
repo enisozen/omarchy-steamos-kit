@@ -91,8 +91,9 @@ cd omarchy-steamos-kit
 
 | Kısayol | İşlev |
 | :--- | :--- |
-| `SUPER + 1` | Çalışma Alanı 1'e Geç (SteamOS Masaüstü) |
-| `SUPER + 2..9` | Normal Masaüstlerine Geç (Masaüstü 1..8) |
+| `SUPER + é` (veya `SUPER + "`) | SteamOS Masaüstüne Geç (Çalışma Alanı 1) |
+| `SUPER + 1..9` | Normal Masaüstlerine Geç (Masaüstü 1..9) |
+| `SUPER + SHIFT + 1..9` | Pencereyi Masaüstü 1..9'a Taşı |
 | `SUPER + SHIFT + S` | Steam Big Picture / Konsol Görünümü Aç/Kapat |
 | `SUPER + Boşluk` | Omarchy Menüsünü Aç ("SteamOS" ara) |
 | `SUPER + W` | Odaktaki Pencereyi Kapat |

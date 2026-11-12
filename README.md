@@ -93,8 +93,9 @@ cd omarchy-steamos-kit
 
 | Shortcut | Action |
 | :--- | :--- |
-| `SUPER + 1` | Switch to Workspace 1 (SteamOS Desktop) |
-| `SUPER + 2..9` | Switch to Standard Workspaces (Desktops 1..8) |
+| `SUPER + é` (or `SUPER + "`) | Switch to SteamOS Desktop (Workspace 1) |
+| `SUPER + 1..9` | Switch to Standard Workspaces (Desktops 1..9) |
+| `SUPER + SHIFT + 1..9` | Move window to Desktop 1..9 |
 | `SUPER + SHIFT + S` | Toggle Steam Big Picture Mode / Console View |
 | `SUPER + Space` | Open Omarchy Menu (Search "SteamOS") |
 | `SUPER + W` | Close focused window |

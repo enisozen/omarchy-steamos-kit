@@ -15,7 +15,7 @@ echo "🎮 Installing SteamOS Kit for Omarchy..."
 
 # 1. Create target directories
 mkdir -p "$CONFIG_DIR/omarchy/plugins/steamos-desktop"
-mkdir -p "$CONFIG_DIR/omarchy/plugins/steamos-menu"
+mkdir -p "$CONFIG_DIR/omarchy/plugins/steamos-workspaces"
 mkdir -p "$CONFIG_DIR/omarchy/themes/steamos"
 mkdir -p "$CONFIG_DIR/omarchy/branding"
 mkdir -p "$CONFIG_DIR/omarchy/extensions"
@@ -23,10 +23,10 @@ mkdir -p "$CONFIG_DIR/environment.d"
 mkdir -p "$STATE_DIR/omarchy/workspace-layouts"
 mkdir -p "$LOCAL_BIN"
 
-# 2. Copy SteamOS Desktop & Menu Plugins
-echo "📦 Installing steamos-desktop and steamos-menu plugins..."
+# 2. Copy SteamOS Desktop & Workspaces Plugins
+echo "📦 Installing steamos-desktop and steamos-workspaces plugins..."
 cp -r "$KIT_DIR/config/omarchy/plugins/steamos-desktop/"* "$CONFIG_DIR/omarchy/plugins/steamos-desktop/"
-cp -r "$KIT_DIR/config/omarchy/plugins/steamos-menu/"* "$CONFIG_DIR/omarchy/plugins/steamos-menu/"
+cp -r "$KIT_DIR/config/omarchy/plugins/steamos-workspaces/"* "$CONFIG_DIR/omarchy/plugins/steamos-workspaces/"
 
 # 3. Copy SteamOS Theme & Plymouth Assets
 echo "🎨 Installing steamos theme and unlock screen..."
@@ -64,18 +64,19 @@ if command -v hyprctl >/dev/null 2>&1; then
   hyprctl reload >/dev/null 2>&1 || true
 fi
 
-# 9. Enable plugins, configure bar, apply theme, and reload Omarchy shell
+# 9. Enable plugins, configure bar workspaces, apply theme, and reload Omarchy shell
 if command -v omarchy >/dev/null 2>&1; then
   echo "🔄 Enabling SteamOS plugins and applying theme..."
   omarchy-shell shell rescanPlugins >/dev/null 2>&1 || true
   omarchy plugin enable steamos.desktop >/dev/null 2>&1 || true
-  omarchy plugin enable steamos.menu --section left --index 0 >/dev/null 2>&1 || true
-  omarchy plugin disable omarchy.menu >/dev/null 2>&1 || true
+  omarchy plugin disable omarchy.workspaces >/dev/null 2>&1 || true
+  omarchy plugin enable steamos.workspaces --section left --after omarchy.menu >/dev/null 2>&1 || true
   omarchy theme set steamos >/dev/null 2>&1 || true
   omarchy-shell -q omarchy.workspaces refresh >/dev/null 2>&1 || true
+  omarchy-shell -q steamos.workspaces refresh >/dev/null 2>&1 || true
   omarchy-shell -q omarchy.dock refresh >/dev/null 2>&1 || true
   omarchy restart shell >/dev/null 2>&1 || true
 fi
 
 echo "✅ SteamOS Kit installation completed successfully!"
-echo "👉 Switch to Workspace 1 to enjoy your new SteamOS desktop environment!"
+echo "👉 Switch to Workspace 1 (SteamOS) via SUPER+é to enjoy your gaming environment!"

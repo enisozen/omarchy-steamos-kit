@@ -15,7 +15,7 @@ echo "🎮 Omarchy SteamOS Kiti Kuruluyor..."
 
 # 1. Hedef dizinleri oluştur
 mkdir -p "$CONFIG_DIR/omarchy/plugins/steamos-desktop"
-mkdir -p "$CONFIG_DIR/omarchy/plugins/steamos-menu"
+mkdir -p "$CONFIG_DIR/omarchy/plugins/steamos-workspaces"
 mkdir -p "$CONFIG_DIR/omarchy/themes/steamos"
 mkdir -p "$CONFIG_DIR/omarchy/branding"
 mkdir -p "$CONFIG_DIR/omarchy/extensions"
@@ -23,10 +23,10 @@ mkdir -p "$CONFIG_DIR/environment.d"
 mkdir -p "$STATE_DIR/omarchy/workspace-layouts"
 mkdir -p "$LOCAL_BIN"
 
-# 2. SteamOS Masaüstü & Menü Eklentilerini Kopyala
-echo "📦 SteamOS masaüstü ve menü eklentileri yükleniyor..."
+# 2. SteamOS Masaüstü & Çalışma Alanı Eklentilerini Kopyala
+echo "📦 SteamOS masaüstü ve çalışma alanı eklentileri yükleniyor..."
 cp -r "$KIT_DIR/config/omarchy/plugins/steamos-desktop/"* "$CONFIG_DIR/omarchy/plugins/steamos-desktop/"
-cp -r "$KIT_DIR/config/omarchy/plugins/steamos-menu/"* "$CONFIG_DIR/omarchy/plugins/steamos-menu/"
+cp -r "$KIT_DIR/config/omarchy/plugins/steamos-workspaces/"* "$CONFIG_DIR/omarchy/plugins/steamos-workspaces/"
 
 # 3. SteamOS Teması & Başlangıç Kilit Görselleri
 echo "🎨 SteamOS teması ve kilit açma ekranı yükleniyor..."
@@ -69,13 +69,14 @@ if command -v omarchy >/dev/null 2>&1; then
   echo "🔄 SteamOS eklentileri ve teması etkinleştiriliyor..."
   omarchy-shell shell rescanPlugins >/dev/null 2>&1 || true
   omarchy plugin enable steamos.desktop >/dev/null 2>&1 || true
-  omarchy plugin enable steamos.menu --section left --index 0 >/dev/null 2>&1 || true
-  omarchy plugin disable omarchy.menu >/dev/null 2>&1 || true
+  omarchy plugin disable omarchy.workspaces >/dev/null 2>&1 || true
+  omarchy plugin enable steamos.workspaces --section left --after omarchy.menu >/dev/null 2>&1 || true
   omarchy theme set steamos >/dev/null 2>&1 || true
   omarchy-shell -q omarchy.workspaces refresh >/dev/null 2>&1 || true
+  omarchy-shell -q steamos.workspaces refresh >/dev/null 2>&1 || true
   omarchy-shell -q omarchy.dock refresh >/dev/null 2>&1 || true
   omarchy restart shell >/dev/null 2>&1 || true
 fi
 
 echo "✅ SteamOS Kiti kurulumu başarıyla tamamlandı!"
-echo "👉 Çalışma Alanı 1'e geçerek SteamOS ortamını kullanmaya başlayabilirsiniz!"
+echo "👉 SUPER + é kısayolu ile SteamOS Çalışma Alanı 1'e geçebilirsiniz!"
