@@ -64,7 +64,9 @@ Integrated into Omarchy's menu system (`~/.config/omarchy/extensions/omarchy-men
 * `󰒍 Arkadaşlar & Sohbet` &rarr; Opens online friends and chat.
 * `󰒓 Steam İstemci Ayarları` &rarr; Opens client, controller, and Proton settings.
 
-### 🎨 5. System-Wide SteamOS Aesthetic
+### 🎨 5. System-Wide SteamOS Aesthetic & Top Bar
+* **Top Bar SteamOS Launcher:** Status bar begins with a native `󰓓 SteamOS` branding button and launcher menu.
+* **Floating App Dock:** Workspace 1 runs in native floating desktop mode with Omarchy's sleek dock (app grid, file manager, terminal, browsers, etc.).
 * **Icon Theme:** Uses `breeze-dark` (the official KDE Plasma icon theme of SteamOS) across file managers, file dialogs, and GTK apps.
 * **Fastfetch / About ASCII Logo:** Official Valve Steam mechanical linkage emblem ASCII art rendered in `fastfetch` and `omarchy-launch-about`.
 * **Plymouth Boot & Unlock Theme:** Authentic SteamOS logo and typography for system boot and disk decryption (`preview-unlock.png` & `unlock.png`).

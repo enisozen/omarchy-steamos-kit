@@ -1,3 +1,8 @@
+-- Ensure ~/.local/bin takes precedence and collation is stable for scripts
+local home = os.getenv("HOME") or ""
+hl.env("PATH", home .. "/.local/bin:" .. (os.getenv("PATH") or ""))
+hl.env("LC_COLLATE", "C")
+
 -- Learn how to configure Hyprland: https://wiki.hypr.land/Configuring/Start/
 
 -- Omarchy's bootstrap keeps path setup out of this user config.

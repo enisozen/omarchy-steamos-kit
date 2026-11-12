@@ -1,0 +1,3 @@
+#!/bin/bash
+export LC_ALL=C
+exec /usr/share/omarchy/bin/omarchy-hyprland-workspace-layout-current "$@"

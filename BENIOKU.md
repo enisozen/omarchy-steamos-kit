@@ -64,7 +64,9 @@ Omarchy menü sistemine tam entegredir:
 * `󰒍 Arkadaşlar & Sohbet` &rarr; Arkadaş listesi ve sohbet penceresini açar.
 * `󰒓 Steam İstemci Ayarları` &rarr; Proton, kontrolcü ve istemci ayarlarını açar.
 
-### 🎨 5. Sistem Geneli SteamOS Tasarımı
+### 🎨 5. Sistem Geneli SteamOS Tasarımı & Üst Bar
+* **Üst Bar SteamOS Logosu ve Butonu:** Durum çubuğunun (bar) sol başında özel `󰓓 SteamOS` logosu ve hızlı başlatıcı menüsü.
+* **Yüzer Uygulama Dock'u (Floating Dock):** Çalışma Alanı 1 yüzer (floating) masaüstü olarak ayarlanır ve altta yerel Omarchy dock'u (uygulama ızgarası, dosya yöneticisi, tarayıcı vb.) otomatik etkinleşir.
 * **İkon Teması:** SteamOS'in resmi KDE arayüzünde kullandığı `breeze-dark` simge paketi sistem genelinde aktiftir.
 * **Hakkında Logosu (Fastfetch):** `fastfetch` ve `omarchy-launch-about` için Valve Steam amblemi ASCII blok sanatı.
 * **Plymouth Başlangıç Kilit Ekranı:** Açılış ve disk şifre çözme için SteamOS teması (`preview-unlock.png` & `unlock.png`).
