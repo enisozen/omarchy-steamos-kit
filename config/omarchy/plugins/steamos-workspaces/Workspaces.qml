@@ -155,6 +155,7 @@ BarWidget {
 
   function cycleLayout() {
     if (!root.bar) return
+    if (root.activeWorkspaceId() === 1) return // Workspace 1 is locked to floating mode for SteamOS & Dock
     var command = "omarchy-hyprland-workspace-layout-toggle"
     if (root.monitor && !root.monitor.focused) {
       command = "hyprctl dispatch " + Util.shellQuote("hl.dsp.focus({ monitor = \"" + root.monitorName + "\" })") + " >/dev/null && " + command
@@ -255,8 +256,7 @@ BarWidget {
           fixedHeight: root.barSize
           opacity: itemRoot.occupied || itemRoot.shown ? 1.0 : 0.6
           onPressed: function() {
-            if (itemRoot.shown) root.cycleLayout()
-            else root.focusWorkspace(1)
+            root.focusWorkspace(1)
           }
           onWheelMoved: function(delta) { root.scrollWorkspaces(delta) }
 
