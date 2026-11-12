@@ -36,6 +36,16 @@ o.window({ class = "^steam$", title = "^(Steam Big Picture.*|Steam Geniş Ekran.
   rounding = 0,
 })
 
+-- Keep Steam Settings and dialogs centered and fit within the screen resolution
+o.window({ class = "^steam$", title = ".*(Settings|Ayarlar).*" }, {
+  center = true,
+  size = { 950, 650 },
+})
+o.window({ class = "^steam$", title = "^Steam$" }, {
+  center = true,
+  size = { 1100, 700 },
+})
+
 -- Automatically enforce fullscreen when Big Picture launches
 local function is_bpm_title(t)
   if not t then return false end

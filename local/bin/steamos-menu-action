@@ -3,6 +3,9 @@
 
 action="${1:-desktop}"
 
+export GDK_SCALE=1
+export STEAM_FORCE_DESKTOPUI_SCALING=1.0
+
 # Helper to switch to workspace 1 (SteamOS desktop)
 switch_to_ws1() {
   hyprctl dispatch 'hl.dsp.focus({ workspace = "1" })' >/dev/null 2>&1 || hyprctl eval 'o.workspaces.focus(1)()' >/dev/null 2>&1
