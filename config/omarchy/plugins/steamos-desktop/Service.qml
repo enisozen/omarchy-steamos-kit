@@ -116,7 +116,7 @@ Scope {
         Image {
           id: customWallpaper
           anchors.fill: parent
-          source: "file:///home/omarchy/.config/omarchy/plugins/steamos-desktop/steam-wallpaper-4k.png"
+          source: Qt.resolvedUrl("steam-wallpaper-4k.png")
           fillMode: Image.PreserveAspectCrop
           cache: true
           z: 0
@@ -461,7 +461,7 @@ Scope {
                   border.width: 1
                   Image {
                     anchors.centerIn: parent
-                    source: "file:///home/omarchy/.config/omarchy/plugins/steamos-desktop/steam-logo-256.png"
+                    source: Qt.resolvedUrl("steam-logo-256.png")
                     width: 20
                     height: 20
                     fillMode: Image.PreserveAspectFit
